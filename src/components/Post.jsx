@@ -17,13 +17,16 @@ export function Post(){
                     </div>
                 </div>
 
-                <time title="01 de Janeiro de 2023" dateTime='2023-01-01 21:32' >Publicado há </time>
+                <time title="01 de Janeiro de 2023" dateTime='2023-01-01 21:32' >Publicado há 1hr</time>
             </header>
             <div className={styles.content}>
                 <p>Fala galera 😁</p>
                 <p>Acabei de subir mais um projeto no meu portifa. </p>
-                <p>🔗 <a href="#">joao.pelisson/ignitefeed</a></p>
-                <p><a href="/">#novoprojeto</a></p>
+                <p>🔗{' '}<a href="#">joao.pelisson/ignitefeed</a></p>
+                <p>
+                    <a href="/">#novoprojeto</a>{' '}
+                    <a href="/">#rocketseat</a>
+                </p>
             </div>
         </article>
     )
