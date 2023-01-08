@@ -1,33 +1,47 @@
+import { format, formatDistanceToNow } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR'
 import { Avatar } from './Avatar';
 import { Comment } from './Comment'
 import styles from './Post.module.css';
 
-export function Post(props){
-    console.log(props);
+export function Post({author, publishedAt, content}){
+    const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'ás' HH:mm'h'", {
+        locale: ptBR,
+    });
+
+    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+        locale: ptBR,
+        addSuffix: true,
+    });
 
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
                     <Avatar 
-                        src="https://github.com/joaopnk.png"
+                        src={author.avatarUrl}
                     />
                     <div className={styles.authorInfo}>
-                        <strong>João Pelisson</strong>
-                        <span>Web Developer ⚡</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
                     </div>
                 </div>
 
-                <time title="01 de Janeiro de 2023" dateTime='2023-01-01 21:32' >Publicado há 1hr</time>
+                <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()} >
+                    {publishedDateRelativeToNow}
+                </time>
             </header>
             <div className={styles.content}>
-                <p>Fala galera 😁</p>
-                <p>Acabei de subir mais um projeto no meu portifa. </p>
-                <p>🔗{' '}<a href="#">joao.pelisson/ignitefeed</a></p>
-                <p>
-                    <a href="/">#novoprojeto</a>{' '}
-                    <a href="/">#rocketseat</a>
-                </p>
+                {
+                    content.map(content => {
+                        if(content.type === 'paragraph'){
+                            return <p>{content.content}</p>
+                        }
+                        else if(content.type === 'link'){
+                            return <p><a href="#">{content.content}</a></p>
+                        }
+                    })
+                }
             </div>
 
             <form className={styles.commentForm}>

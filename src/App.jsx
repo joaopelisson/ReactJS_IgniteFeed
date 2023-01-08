@@ -11,7 +11,7 @@ const postsMock = [
     author: {
       avatarUrl: 'https://github.com/joaopelisson.png',
       name: 'João Pedro',
-      role: "Developer web | frontend"
+      role: "Web Developer ⚡ | frontend"
     },
     content: [
       {type: 'paragraph', content: 'Fala galera 😁'},
@@ -25,10 +25,10 @@ const postsMock = [
     author: {
       avatarUrl: 'https://github.com/joaopnk.png',
       name: 'Pedro',
-      role: "Developer web | frontend"
+      role: "Web Developer 🧙‍♂️ | frontend"
     },
     content: [
-      {type: 'paragraph', content: 'Fala galera 😁'},
+      {type: 'paragraph', content: 'Fala galera 🚀'},
       {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa.'},
       {type: 'link', content: 'joao.pelisson/ignitefeed'},
     ],
