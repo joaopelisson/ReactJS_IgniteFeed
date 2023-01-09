@@ -52,10 +52,14 @@ export function Post({author, publishedAt, content}){
                 {
                     content.map(content => {
                         if(content.type === 'paragraph'){
-                            return <p>{content.content}</p>
+                            return (
+                                <p key={content.content}>{content.content}</p>
+                            )
                         }
                         else if(content.type === 'link'){
-                            return <p><a href="#">{content.content}</a></p>
+                            return (
+                                <p key={content.content}><a href="#">{content.content}</a></p>
+                            )
                         }
                     })
                 }
@@ -79,7 +83,7 @@ export function Post({author, publishedAt, content}){
              {
                 commentsMock.map(comment => {
                     return (
-                        <Comment  content={comment} />
+                        <Comment key={comment} content={comment} />
                     )
                 })
              }
