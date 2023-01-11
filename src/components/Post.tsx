@@ -5,22 +5,26 @@ import { Avatar } from './Avatar';
 import { Comment } from './Comment'
 import styles from './Post.module.css';
 
-interface Author{
+interface Author {
     name: string;
     role: string;
     avatarUrl: string;
-};
+}
+
 interface Content {
-    type: 'paragraph' | 'link';
+    type: string;
     content: string;
 }
-interface PostProps{
+
+interface PostProps {
     author: Author;
     publishedAt: Date;
     content: Content[];
 }
 
-export function Post({author, publishedAt, content}: PostProps){
+
+export function  Post({ author, publishedAt, content}: PostProps){
+
     const [commentsMock, setcommentsMock] = useState([
         'Post muito bacana, parábens! 🔥 🚀',
     ]);

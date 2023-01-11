@@ -16,7 +16,7 @@ const postsMock = [
     content: [
       {type: 'paragraph', content: 'Fala galera 😁'},
       {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa.'},
-      {type: 'link', content: 'joao.pelisson/ignitefeed'},
+      {type: 'link',     content: 'joao.pelisson/ignitefeed'}
     ],
     publishedAt: new Date('2023-01-05 19:43:00')
   },
@@ -25,12 +25,12 @@ const postsMock = [
     author: {
       avatarUrl: 'https://github.com/joaopnk.png',
       name: 'Pedro',
-      role: "Web Developer 🧙‍♂️ | frontend"
+      role: 'Web Developer 🧙‍♂️ | frontend'
     },
     content: [
       {type: 'paragraph', content: 'Fala galera 🚀'},
       {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa.'},
-      {type: 'link', content: 'joao.pelisson/ignitefeed'},
+      {type: 'link',      content: 'joao.pelisson/ignitefeed'}
     ],
     publishedAt: new Date('2023-01-08 19:43:00')
   },
